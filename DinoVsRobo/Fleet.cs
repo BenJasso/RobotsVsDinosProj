@@ -14,9 +14,9 @@ namespace DinoVsRobo
 
         public Fleet()
         {
-            robo1 = new Robot("R100");
-            robo2 = new Robot("R200");
-            robo3 = new Robot("R500");
+            robo1 = new Robot("R100", 100);
+            robo2 = new Robot("R200", 200);
+            robo3 = new Robot("R500", 350);
         }
 
 

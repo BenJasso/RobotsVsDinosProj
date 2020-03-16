@@ -22,19 +22,10 @@ namespace DinoVsRobo
             this.energyCost = energyCost;
 
         }
+    }
 
 
 
         //methods
-        Weapon electricBlaster = new Weapon("electric blaster", 35, 10);
-        Weapon zapper = new Weapon("zapper", 45, 20);
-        Weapon rayGun = new Weapon("ray gun", 70, 40);
-
-        public void WeaponAttack(int weaponAttackPower, int opposingHealthLevel, int opposingEnergyLevel, int energyDeduction)
-        {
-            opposingHealthLevel -= weaponAttackPower;
-            opposingEnergyLevel -= energyDeduction;
-
-        }
-    }
+        
 }

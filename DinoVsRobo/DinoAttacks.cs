@@ -9,19 +9,19 @@ namespace DinoVsRobo
     class DinoAttacks
     {
         //variables
-        string attackName;
-        int attackPower;
-
-        //constructor
-        public DinoAttacks(string attackName, int attackPower)
-        {
-            this.attackName = attackName;
-            this.attackPower = attackPower;
-        }
+        public DinoAttack massiveChomp;
+        public DinoAttack massiveStomp;
+        public DinoAttack tailSwipe;
 
         //methods
 
-        DinoAttacks massiveChomp = new DinoAttacks("massive chomp", 75);
+        public DinoAttacks()
+        {
+            massiveChomp = new DinoAttack("massive chomp",75);
+            massiveStomp = new DinoAttack("massive stomp", 55);
+            tailSwipe = new DinoAttack("tail swipe", 30);
+
+        }
 
     }
 }

@@ -16,9 +16,9 @@ namespace DinoVsRobo
 
         public Herd()
         {
-          trex = new Dinosaur("Trex", 75);
-          teradactol = new Dinosaur("Teradactol", 50);
-          raptor = new Dinosaur("Raptor", 35);
+          trex = new Dinosaur("Trex", 400);
+          teradactol = new Dinosaur("Teradactol", 200);
+          raptor = new Dinosaur("Raptor", 100);
         }
         
 

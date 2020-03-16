@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battlefield.cs" />
+    <Compile Include="DinoAttack.cs" />
     <Compile Include="DinoAttacks.cs" />
     <Compile Include="Dinosaur.cs" />
     <Compile Include="Fleet.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Robot.cs" />
     <Compile Include="RunBattle.cs" />
     <Compile Include="Weapon.cs" />
+    <Compile Include="WeaponList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

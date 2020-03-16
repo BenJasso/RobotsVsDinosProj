@@ -12,14 +12,17 @@ namespace DinoVsRobo
         public string name;
         public int health;
         public int powerLevel;
+        public string weaponName;
+        public int weaponPower;
+       
     
 
         //constructor
-        public Robot(string name)
+        public Robot(string name, int health)
         {
             this.name = name;
             
-            health = 100;
+            this.health = health;
             powerLevel = 100;
         }
 
