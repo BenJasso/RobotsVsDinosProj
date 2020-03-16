@@ -95,9 +95,9 @@ namespace DinoVsRobo
                     
 
                     }
-                    else if (attacker == roundDino.type && roundDino.energy > 0)
+                    else if (attacker == roundDino.type && roundDino.energy >= 0)
                     {
-                        Console.WriteLine($"{roundDino.type} attack by selecting an attack!\n1) Massive Chomp: PWR 75, ENG COST 50\n2) Massive Stomp: PWR 55, ENG 30\n3) Tail Swipe: PWR 30, ENG 15\n");
+                        Console.WriteLine($"{roundDino.type} attack by selecting an attack!\n1) Massive Chomp: PWR 75, ENG COST 50\n2) Massive Stomp: PWR 55, ENG 30\n3) Tail Swipe: PWR 30, ENG 15\n4) Restore Energy: ENG +100\n");
                         attackChoice = Console.ReadLine();
                         if(attackChoice == "1")
                         {
@@ -124,7 +124,7 @@ namespace DinoVsRobo
 
                            
                         }
-                         else if (weaponChoice == "4")
+                         else if (attackChoice == "4")
                         {
                             roundDino.energy = 100;
                         }
