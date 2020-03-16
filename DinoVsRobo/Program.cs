@@ -14,15 +14,17 @@ namespace DinoVsRobo
             Battlefield battlefield = new Battlefield();
             DinoAttacks dinoAttacks = new DinoAttacks();
            
+           
             
             string weaponChoice;
             string attackChoice;
+            string attacker;
 
            
 
 
             Console.WriteLine("Round 1: R100 vs Raptor");
-            Dinosaur roundDino = new Dinosaur("Raptor", 100);
+            Dinosaur roundDino = battlefield.herd.raptor;
             Robot roundRobo = new Robot("R100", 100);
             
            
@@ -32,6 +34,9 @@ namespace DinoVsRobo
             Console.WriteLine($"{roundRobo.name}: Select the weapon you want to equip .\n1) Electric Blaster: PWR 50, ENG COST 25\n2) Zapper: PWR 20, ENG COST 10  \n3) Ray Gun: PWR 35, ENG COST 15");
             weaponChoice = Console.ReadLine();
             AssignWeapon();
+            attacker = roundRobo.name;
+            AttackPhase attackPhaseStarter = new AttackPhase(roundRobo, roundDino, attacker);
+            attackPhaseStarter.AttackPhaseStarter();
 
 
             Console.ReadLine();
@@ -127,21 +132,25 @@ namespace DinoVsRobo
                 {
                     roundRobo.weaponName = gameWeaponList.electricBlaster.name;
                     roundRobo.weaponPower = gameWeaponList.electricBlaster.attackPower;
+                    roundRobo.energyCost = gameWeaponList.electricBlaster.energyCost;
                 }
                 else if (weaponChoice == "2")
                 {
                     roundRobo.weaponName = gameWeaponList.zapper.name;
                     roundRobo.weaponPower = gameWeaponList.zapper.attackPower;
+                    roundRobo.energyCost = gameWeaponList.zapper.energyCost;
                 }
                 else if (weaponChoice == "3")
                 {
                     roundRobo.weaponName = gameWeaponList.rayGun.name;
                     roundRobo.weaponPower = gameWeaponList.rayGun.attackPower;
+                    roundRobo.energyCost = gameWeaponList.rayGun.energyCost;
                 }
                 else
                 {
                     roundRobo.weaponName = gameWeaponList.rayGun.name;
                     roundRobo.weaponPower = gameWeaponList.rayGun.attackPower;
+                    roundRobo.energyCost = gameWeaponList.rayGun.energyCost;
                 }
 
                 //}

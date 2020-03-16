@@ -17,9 +17,9 @@ namespace DinoVsRobo
 
         public DinoAttacks()
         {
-            massiveChomp = new DinoAttack("massive chomp",75);
-            massiveStomp = new DinoAttack("massive stomp", 55);
-            tailSwipe = new DinoAttack("tail swipe", 30);
+            massiveChomp = new DinoAttack("massive chomp",75, 50);
+            massiveStomp = new DinoAttack("massive stomp", 55, 30);
+            tailSwipe = new DinoAttack("tail swipe", 30, 15);
 
         }
 

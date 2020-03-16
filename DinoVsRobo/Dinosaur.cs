@@ -13,14 +13,17 @@ namespace DinoVsRobo
         public int health;
         public int energy;
         public int attackPower;
-        public string attackName;
+        
+        public int attackCost;
+        
 
         //constructor
-        public Dinosaur(string type, int energy)
+        public Dinosaur(string type, int health)
         {
             this.type = type;
-            this.energy = energy;
-            health = 100;
+
+            this.health = health;
+
             energy = 100;
             
         }

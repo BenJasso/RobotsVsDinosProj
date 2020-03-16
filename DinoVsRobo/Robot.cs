@@ -14,6 +14,7 @@ namespace DinoVsRobo
         public int powerLevel;
         public string weaponName;
         public int weaponPower;
+        public int energyCost;
        
     
 
