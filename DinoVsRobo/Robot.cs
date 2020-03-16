@@ -15,8 +15,8 @@ namespace DinoVsRobo
         public string weaponName;
         public int weaponPower;
         public int energyCost;
-       
-    
+
+
 
         //constructor
         public Robot(string name, int health)

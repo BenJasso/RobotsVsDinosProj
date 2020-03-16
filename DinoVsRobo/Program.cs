@@ -31,9 +31,8 @@ namespace DinoVsRobo
             Console.ReadLine();
             update(roundRobo.name, roundDino.type, roundRobo.health, roundDino.health, roundRobo.powerLevel, roundDino.energy);
             
-            Console.WriteLine($"{roundRobo.name}: Select the weapon you want to equip .\n1) Electric Blaster: PWR 50, ENG COST 25\n2) Zapper: PWR 20, ENG COST 10  \n3) Ray Gun: PWR 35, ENG COST 15");
-            weaponChoice = Console.ReadLine();
-            AssignWeapon();
+           
+           
             attacker = roundRobo.name;
             AttackPhase attackPhaseStarter = new AttackPhase(roundRobo, roundDino, attacker);
             attackPhaseStarter.AttackPhaseStarter();
