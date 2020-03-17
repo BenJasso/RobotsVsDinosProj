@@ -17,13 +17,14 @@ namespace DinoVsRobo
 
 
 
-            Console.WriteLine("Round 1: R100 vs Raptor");
+            Console.WriteLine("Press enter to enter the battlefield and spawn the herd and fleet");
+          
+            
             Dinosaur roundDino = battlefield.herd.raptor;
             Robot roundRobo = new Robot("R100", 100);
-
-
+            
             Console.ReadLine();
-            Console.WriteLine($"{roundRobo}: HEALTH {roundRobo.health}, ENERGY {roundRobo.powerLevel}\n{roundDino.type}: HEALTH {roundDino.health}, ENERGY {roundDino.energy}\n");
+            Console.WriteLine($"{roundRobo.name}: HEALTH {roundRobo.health}, ENERGY {roundRobo.powerLevel}\nvs\n{roundDino.type}: HEALTH {roundDino.health}, ENERGY {roundDino.energy}\n");
 
 
 

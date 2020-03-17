@@ -46,9 +46,9 @@ namespace DinoVsRobo
                 while (roundDino.health > 0 && roundRobo.health > 0)
                 {
 
-                if (attacker == roundRobo.name && roundRobo.powerLevel > 0)
+                if (attacker == roundRobo.name && roundRobo.powerLevel >= -1)
                 {
-                    Console.WriteLine($"{roundRobo.name}: Select the number of the weapon you want to attack with or to restore your energy.\n1) Electric Blaster: PWR 50, ENG COST 25\n2) Zapper: PWR 20, ENG COST 10  \n3) Ray Gun: PWR 35, ENG COST 15\n4) Restore Energy: ENG +100\n");
+                    Console.WriteLine($"{roundRobo.name}: Select the number of the weapon you want to attack with or to restore your energy.\n1) Electric Blaster: PWR 50, ENG 25\n2) Zapper: PWR 20, ENG 10  \n3) Ray Gun: PWR 35, ENG 15\n4) Restore Energy: ENG +100\n");
                     weaponChoice = Console.ReadLine();
                     if (weaponChoice == "1")
                     {
@@ -80,7 +80,7 @@ namespace DinoVsRobo
                         roundRobo.energyCost = gameWeaponList.rayGun.energyCost;
                     }
 
-                    if (roundRobo.powerLevel >= roundRobo.energyCost)
+                    if (roundRobo.powerLevel >= roundRobo.energyCost && weaponChoice != "4")
                     {
                         roundDino.health = roundDino.health - roundRobo.weaponPower;
                         roundRobo.powerLevel = roundRobo.powerLevel - roundRobo.energyCost;
@@ -90,15 +90,15 @@ namespace DinoVsRobo
                         Console.WriteLine("Sorry you do not have enough energy. You lose your turn.");
                     }
 
-                    Console.WriteLine($"{roundRobo.name}: HEALTH {roundRobo.health}, ENERGY {roundRobo.powerLevel}\n{roundDino.type}: HEALTH {roundDino.health}, ENERGY {roundDino.energy}\n");
+                    Console.WriteLine($"{roundRobo.name}: HEALTH {roundRobo.health}, ENERGY {roundRobo.powerLevel}\nvs\n{roundDino.type}: HEALTH {roundDino.health}, ENERGY {roundDino.energy}\n");
 
                     attacker = roundDino.type;
 
 
                 }
-                else if (attacker == roundDino.type && roundDino.energy >= 0)
+                else if (attacker == roundDino.type && roundDino.energy >= -1)
                 {
-                    Console.WriteLine($"{roundDino.type} attack by selecting an attack!\n1) Massive Chomp: PWR 75, ENG COST 50\n2) Massive Stomp: PWR 55, ENG 30\n3) Tail Swipe: PWR 30, ENG 15\n4) Restore Energy: ENG +100\n");
+                    Console.WriteLine($"{roundDino.type} attack by selecting an attack!\n1) Massive Chomp: PWR 75, ENG 50\n2) Massive Stomp: PWR 55, ENG 30\n3) Tail Swipe: PWR 30, ENG 15\n4) Restore Energy: ENG +100\n");
                     attackChoice = Console.ReadLine();
                     if (attackChoice == "1")
                     {
@@ -125,7 +125,7 @@ namespace DinoVsRobo
                     {
                         roundDino.energy = 100;
                     }
-                    if (roundDino.energy >= roundDino.attackCost)
+                    if (roundDino.energy >= roundDino.attackCost && attackChoice != "4")
                     {
                         roundRobo.health -= roundDino.attackPower;
                         roundDino.energy -= roundDino.attackCost;
@@ -137,7 +137,7 @@ namespace DinoVsRobo
 
 
                     attacker = roundRobo.name;
-                    Console.WriteLine($"{roundRobo.name}: HEALTH {roundRobo.health}, ENERGY {roundRobo.powerLevel}\n{roundDino.type}: HEALTH {roundDino.health}, ENERGY {roundDino.energy}\n");
+                    Console.WriteLine($"{roundRobo.name}: HEALTH {roundRobo.health}, ENERGY {roundRobo.powerLevel}\nvs\n{roundDino.type}: HEALTH {roundDino.health}, ENERGY {roundDino.energy}\n");
         }
                     if (roundDino.health <= 0 && roundDino.type == battlefield.herd.raptor.type)
                     {
@@ -169,11 +169,25 @@ namespace DinoVsRobo
 
                         attacker = battlefield.fleet.robo3.name;
 
-                        Console.WriteLine("R200 Died! Here comes R200!");
+                        Console.WriteLine("R200 Died! Here comes R500!");
                         Console.ReadLine();
 
                     }
-                }
+                    if (roundDino.health <= 0 && roundDino.type == battlefield.herd.trex.type)
+                    {
+                    
+                        Console.WriteLine("Trex has fallen! The fleet Win!!!");
+                        Console.ReadLine();
+                    }
+                    else if (roundRobo.health <= 0 && roundRobo.name == battlefield.fleet.robo3.name)
+                    {
+                        
+
+                        Console.WriteLine("R500 Died!!! The herd Win!!!");
+                        Console.ReadLine();
+
+                    }
+            }
         }
             
     }
